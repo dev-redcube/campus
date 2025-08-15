@@ -109,8 +109,10 @@ dev_dependencies:
   # code generation
   build_runner: ^2.4.8
   isar_generator:
-    hosted: https://pub.isar-community.dev
-    version: ^3.1.7
+    git:
+      url: https://github.com/immich-app/isar
+      ref: v3
+      path: packages/isar_generator/
   riverpod_generator: ^2.6.1
   slang_build_runner: ^4.7.0
 
