@@ -95,7 +95,7 @@ dependency_overrides:
     git:
       url: https://github.com/fluttercommunity/flutter_workmanager.git
       path: workmanager
-      ref: main
+      ref: 387d306
   icalendar:
     git:
       url: https://github.com/dev-redcube/icalendar-dart.git
