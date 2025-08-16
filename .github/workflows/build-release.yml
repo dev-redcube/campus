@@ -33,7 +33,7 @@ jobs:
           ref="${input_ref:-$github_ref}"
           echo "ref=$ref" >> $GITHUB_OUTPUT
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: ${{ steps.get-ref.outputs.ref }}
 

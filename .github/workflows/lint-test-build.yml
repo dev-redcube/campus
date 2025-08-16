@@ -45,7 +45,7 @@ jobs:
       - run: flutter doctor -v
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Cache pub dependencies
         uses: actions/cache@v4
@@ -78,5 +78,4 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Profile build ${{ github.head_ref }}
           path: build/app/outputs/flutter-apk/app-profile.apk
