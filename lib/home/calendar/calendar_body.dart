@@ -9,7 +9,7 @@ import 'package:redcube_campus/shared/models/event_data.dart';
 import 'package:redcube_campus/shared/prefs.dart';
 
 final calendarController = CalendarController<EventData>();
-final eventsController = CalendarEventsController<EventData>();
+final eventsController = DefaultEventsController<EventData>();
 
 class CalendarBody extends ConsumerStatefulWidget {
   const CalendarBody({super.key});

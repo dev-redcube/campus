@@ -97,9 +97,29 @@ class SyncProgress extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final value = ref.watch(iCalSyncStateNotifierProvider).value;
-    return SizedBox(
-      height: value?.syncProgress == ICalSyncProgressEnum.inProgress ? null : 0,
-      child: LinearProgressIndicator(value: value?.progressInPercent),
+    
+    if (value?.syncProgress != ICalSyncProgressEnum.inProgress) {
+      // Show error state briefly if there are errors
+      if (value?.hasErrors == true && value?.syncProgress == ICalSyncProgressEnum.error) {
+        return Container(
+          height: 4,
+          child: LinearProgressIndicator(
+            value: 1.0,
+            backgroundColor: Colors.red.withOpacity(0.3),
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+          ),
+        );
+      }
+      return const SizedBox.shrink();
+    }
+    
+    return Container(
+      height: 4,
+      child: LinearProgressIndicator(
+        value: value?.progressInPercent,
+        backgroundColor: Colors.blue.withOpacity(0.3),
+        valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+      ),
     );
   }
 }

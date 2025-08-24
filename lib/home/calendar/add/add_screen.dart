@@ -6,7 +6,7 @@ import 'package:redcube_campus/home/calendar/add/add_new_calendar.dart';
 import 'package:redcube_campus/home/calendar/calendar_body.dart';
 import 'package:redcube_campus/home/calendar/models/calendar.dart';
 import 'package:redcube_campus/home/calendar/parse_events.dart';
-import 'package:redcube_campus/home/calendar/service/ical_sync_service.dart';
+import 'package:redcube_campus/home/calendar/service/enhanced_ical_sync_service.dart';
 import 'package:redcube_campus/i18n/strings.g.dart';
 
 class AddCalendarScreen extends StatelessWidget {
@@ -22,7 +22,7 @@ class AddCalendarScreen extends StatelessWidget {
     if (context.mounted) {
       context.pop();
     }
-    final icalService = ICalService();
+    final icalService = EnhancedICalSyncService(updateCalendarController: true);
     icalService.syncSingle(calendar).then((_) async {
       final events = await parseEvents(calendar);
       eventsController.addEvents(events.toList());
