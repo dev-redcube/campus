@@ -7,14 +7,13 @@ import 'package:kalender/kalender.dart';
 import 'package:logging/logging.dart';
 import 'package:redcube_campus/home/calendar/calendar_service.dart';
 import 'package:redcube_campus/home/calendar/models/calendar.dart';
-import 'package:redcube_campus/home/calendar/service/ical_sync_service.dart';
+import 'package:redcube_campus/home/calendar/service/enhanced_ical_sync_service.dart';
 import 'package:redcube_campus/shared/models/event_data.dart';
 import 'package:rrule/rrule.dart' as rrule;
 
 Future<List<CustomCalendarEvent>> parseAllEvents() async {
-  final iCalService = ICalService();
-  final activeCalendars = await iCalService.getActiveCalendars();
-  final path = await ICalService.getPath();
+  final activeCalendars = await EnhancedICalSyncService().getActiveCalendars();
+  final path = await EnhancedICalSyncService.getPath();
 
   final List<CustomCalendarEvent> events = [];
 
@@ -30,7 +29,7 @@ Future<List<CustomCalendarEvent>> parseAllEvents() async {
 }
 
 Future<Iterable<CustomCalendarEvent>> parseEvents(Calendar calendar) async {
-  final path = await ICalService.getPath();
+  final path = await EnhancedICalSyncService.getPath();
   final file = File("${path.path}/${calendar.id}.ics");
   if (!await file.exists()) return Future.value([]);
 
