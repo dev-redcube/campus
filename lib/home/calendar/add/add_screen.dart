@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:isar/isar.dart';
+import 'package:isar_community/isar.dart';
 import 'package:redcube_campus/home/calendar/add/add_existing_calendar.dart';
 import 'package:redcube_campus/home/calendar/add/add_new_calendar.dart';
 import 'package:redcube_campus/home/calendar/calendar_body.dart';
