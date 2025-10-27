@@ -1,5 +1,5 @@
 import 'package:flutter/painting.dart';
-import 'package:isar/isar.dart';
+import 'package:isar_community/isar.dart';
 
 part 'calendar.g.dart';
 
