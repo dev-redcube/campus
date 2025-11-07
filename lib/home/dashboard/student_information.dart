@@ -31,9 +31,9 @@ class TopInformation extends StatelessWidget {
                 url: "https://nine.hm.edu",
               ),
               WebOpenCard(
-                label: "HORST",
+                label: "Primuss",
                 icon: Icons.language_rounded,
-                url: "https://horst.hm.edu",
+                url: "https://www3.primuss.de/cgi-bin/login/index.pl?FH=fhm",
               ),
             ],
           ),
