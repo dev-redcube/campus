@@ -76,6 +76,6 @@ jobs:
         run: flutter build apk --profile
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           path: build/app/outputs/flutter-apk/app-profile.apk
