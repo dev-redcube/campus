@@ -59,7 +59,7 @@ jobs:
     needs: build_mobile
     steps:
       - name: Download Binaries
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: nightly-binaries
           path: binaries
