@@ -68,7 +68,10 @@ class _MealsConsumerWrapper extends ConsumerWidget {
     switch (meals) {
       case AsyncData(:final value):
         if (value == null)
-          return _MealsError(message: t.mealplan.errors.unknown);
+          return _MealsError(
+            message: t.mealplan.errors.unknown,
+            showLogs: true,
+          );
         if (value.isEmpty)
           return _MealsError(message: t.mealplan.errors.noMeals);
         return _MealsBody(mealDays: value, controller: controller);
@@ -151,29 +154,28 @@ class _MealsBodyState extends State<_MealsBody> {
 }
 
 class _MealsError extends StatelessWidget {
-  const _MealsError({required this.message, this.isError = false});
+  const _MealsError({required this.message, this.showLogs = false});
 
   final String message;
-  final bool isError;
+  final bool showLogs;
 
   @override
   Widget build(BuildContext context) {
-    if (isError)
-      return Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(message),
-            SizedBox(height: 8),
-            TextButton(
-              onPressed: () {
-                context.pushNamed(LogsScreen.routeName);
-              },
-              child: Text(t.mealplan.errors.goToLogs),
-            ),
-          ],
-        ),
-      );
-    return Center(child: Text(message));
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (showLogs) Text(message),
+
+          if (showLogs) SizedBox(height: 8),
+          TextButton(
+            onPressed: () {
+              context.pushNamed(LogsScreen.routeName);
+            },
+            child: Text(t.mealplan.errors.goToLogs),
+          ),
+        ],
+      ),
+    );
   }
 }
