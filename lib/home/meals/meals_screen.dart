@@ -8,6 +8,7 @@ import 'package:redcube_campus/home/meals/meal_view.dart';
 import 'package:redcube_campus/home/meals/models/day.dart';
 import 'package:redcube_campus/home/meals/service/canteen_service.dart';
 import 'package:redcube_campus/i18n/strings.g.dart';
+import 'package:redcube_campus/settings/logs/logs_screen.dart';
 import 'package:redcube_campus/settings/settings_screen.dart';
 import 'package:redcube_campus/shared/extensions/extensions_date_time.dart';
 import 'package:redcube_campus/shared/extensions/extensions_list.dart';
@@ -66,7 +67,13 @@ class _MealsConsumerWrapper extends ConsumerWidget {
 
     switch (meals) {
       case AsyncData(:final value):
-        if (value == null) return const SizedBox.shrink();
+        if (value == null)
+          return _MealsError(
+            message: t.mealplan.errors.unknown,
+            showLogs: true,
+          );
+        if (value.isEmpty)
+          return _MealsError(message: t.mealplan.errors.noMeals);
         return _MealsBody(mealDays: value, controller: controller);
       case _:
         // Loading
@@ -142,6 +149,33 @@ class _MealsBodyState extends State<_MealsBody> {
                 ),
               )
               .toList(),
+    );
+  }
+}
+
+class _MealsError extends StatelessWidget {
+  const _MealsError({required this.message, this.showLogs = false});
+
+  final String message;
+  final bool showLogs;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (showLogs) Text(message),
+
+          if (showLogs) SizedBox(height: 8),
+          TextButton(
+            onPressed: () {
+              context.pushNamed(LogsScreen.routeName);
+            },
+            child: Text(t.mealplan.errors.goToLogs),
+          ),
+        ],
+      ),
     );
   }
 }
