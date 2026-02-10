@@ -148,6 +148,11 @@
         "high": "Viel los. Lange Anstehzeit",
         "snackbar": "Danke für die Info!"
       }
+    },
+    "errors": {
+      "noMeals": "Aktuell sind keine Mahlzeiten geplant",
+      "unknown": "Ein unbekannter Fehler ist aufgetreten. Bitte kontaktiere den Entwickler mit den Logs.",
+      "goToLogs": "Logs"
     }
   },
   "settings": {

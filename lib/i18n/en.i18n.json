@@ -148,6 +148,11 @@
         "high": "Long queue",
         "snackbar": "Thanks for the info!"
       }
+    },
+    "errors": {
+      "noMeals": "There are currently no meals planned",
+      "unknown": "An unknown error occurred. Please contact the developer with logs.",
+      "goToLogs": "logs"
     }
   },
   "settings": {
