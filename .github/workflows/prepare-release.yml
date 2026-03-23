@@ -63,7 +63,7 @@ jobs:
 
       - name: Commit and tag
         id: push-tag
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v10
         with:
           author_name: Moritz Huber
           author_email: 2nd@moritzhuber.de
