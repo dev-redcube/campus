@@ -166,6 +166,7 @@
       "initialLocation": {
         "title": "Startbildschirm",
         "dashboard": "Dashboard",
+        "calendar": "Kalender",
         "mealplan": "Essensplan"
       }
     },
