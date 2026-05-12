@@ -166,6 +166,7 @@
       "initialLocation": {
         "title": "Startup location",
         "dashboard": "Dashboard",
+        "calendar": "Calendar",
         "mealplan": "Mealplan"
       }
     },

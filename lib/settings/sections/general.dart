@@ -21,6 +21,7 @@ class GeneralSettingsSection extends StatelessWidget {
           pref: Prefs.initialLocation,
           options: [
             DropdownItem(t.settings.general.initialLocation.dashboard, "/"),
+            DropdownItem(t.settings.general.initialLocation.calendar, "/calendar"),
             DropdownItem(t.settings.general.initialLocation.mealplan, "/meals"),
           ],
         ),
