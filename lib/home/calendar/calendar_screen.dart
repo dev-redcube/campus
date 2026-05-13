@@ -80,15 +80,14 @@ class _CalendarViewConfigurationIconState
   }
 
   @override
-  Widget build(BuildContext context) => switch (Prefs
-      .calendarViewConfiguration
-      .value) {
-    0 => const Icon(Icons.calendar_view_day_rounded),
-    1 => const Icon(Icons.calendar_view_week_rounded),
-    2 => const Icon(Icons.calendar_view_month_rounded),
-    // Never happening
-    _ => const Icon(Icons.error_rounded),
-  };
+  Widget build(BuildContext context) =>
+      switch (Prefs.calendarViewConfiguration.value) {
+        0 => const Icon(Icons.calendar_view_day_rounded),
+        1 => const Icon(Icons.calendar_view_week_rounded),
+        2 => const Icon(Icons.calendar_view_month_rounded),
+        // Never happening
+        _ => const Icon(Icons.error_rounded),
+      };
 }
 
 class SyncProgress extends ConsumerWidget {
@@ -96,10 +95,10 @@ class SyncProgress extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final value = ref.watch(iCalSyncStateNotifierProvider).value;
+    final value = ref.watch(icalSyncStateNotifierProvider);
     return SizedBox(
-      height: value?.syncProgress == ICalSyncProgressEnum.inProgress ? null : 0,
-      child: LinearProgressIndicator(value: value?.progressInPercent),
+      height: value.syncProgress == ICalSyncProgressEnum.inProgress ? null : 0,
+      child: LinearProgressIndicator(value: value.progressInPercent),
     );
   }
 }

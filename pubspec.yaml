@@ -2,7 +2,7 @@ name: redcube_campus
 description: Unofficial App for Hochschule Munich
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.11.2
 
 environment:
-  sdk: ^3.7.2
+  sdk: ^3.11.4
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -42,10 +42,10 @@ dependencies:
   http: ^1.2.1
 
   # state management
-  flutter_riverpod: ^2.6.1
-  riverpod_annotation: ^2.6.1
-  get_it: ^8.0.0
-  go_router: ^15.1.0
+  flutter_riverpod: ^3.3.1
+  riverpod_annotation: ^4.0.2
+  get_it: ^9.2.1
+  go_router: ^17.2.3
   provider: ^6.0.5
 
   # ui
@@ -62,23 +62,23 @@ dependencies:
   collection: ">=1.0.0"
   geolocator: ^14.0.0
   icalendar: ^0.1.3
-  latlong2: ^0.9.0
+  latlong2: ^0.10.1
   logging: ^1.2.0
-  json_serializable: ^6.7.1
-  json_annotation: ^4.8.1
-  package_info_plus: ^8.0.0
+  json_serializable: ^6.10.0
+  json_annotation: ^4.11.0
+  package_info_plus: ^9.0.1
   path_provider: ^2.0.14
   permission_handler: ^12.0.0+1
   rrule: ^0.2.16
-  share_plus: ^10.0.2
+  share_plus: ^12.0.2
   url_launcher: ^6.1.12
   uuid: ^4.3.3
   workmanager: ^0.5.2
 
   # intl
   intl: ">=0.18.0"
-  slang: ^4.7.1
-  slang_flutter: ^4.7.0
+  slang: ^4.14.0
+  slang_flutter: ^4.14.0
 
   # storage
   isar_community: ^3.1.7
@@ -87,11 +87,6 @@ dependencies:
 
 dependency_overrides:
   # For some reason Workmanager didn't push fixes to the registry
-  workmanager:
-    git:
-      url: https://github.com/fluttercommunity/flutter_workmanager.git
-      path: workmanager
-      ref: 387d306
   icalendar:
     git:
       url: https://github.com/dev-redcube/icalendar-dart.git
@@ -103,20 +98,18 @@ dev_dependencies:
     sdk: flutter
 
   # code generation
-  build_runner: ^2.4.8
+  build_runner: ^2.6.0
   isar_community_generator: ^3.1.7
-  riverpod_generator: ^2.6.1
-  slang_build_runner: ^4.7.0
+  riverpod_generator: ^4.0.3
 
   # linting
-  flutter_lints: ^5.0.0
-  riverpod_lint: ^2.6.1
+  flutter_lints: ^6.0.0
+  riverpod_lint: ^3.1.3
 
   # utilities
   rename: ^3.0.0
 
 flutter:
-
   uses-material-design: true
   fonts:
     - family: Inconsolata

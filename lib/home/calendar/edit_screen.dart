@@ -30,7 +30,7 @@ class CalendarEditScreen extends ConsumerWidget {
             icon: const Icon(Icons.refresh),
             tooltip: t.calendar.edit.refresh.tooltip,
             onPressed: () {
-              ref.read(iCalSyncStateNotifierProvider.notifier).sync();
+              ref.read(icalSyncStateNotifierProvider.notifier).sync();
             },
           ),
         ],
